@@ -1,16 +1,23 @@
 <section>
-  <p>Here are all of your tasks:</p>
-  <ul>
-    <% @todo.each() do |todo| %>
-      <li><%= todo.description() %></li>
-    <% end %>
-  </ul>
+  <% if @todo == [] %>
+    <p>Your schedule is clear... go party!</p>
+  <% else %>
+    <p>Here are all of your tasks:</p>
+    <ul>
+      <% @todo.each() do |todo| %>
+        <li><%= todo.description() %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </section>
 
 <section>
   <form action="/todo" method="post">
     <label for="description">Add a new to-do item:</label>
-    <input id="description" name="description" type="text">
+    <input name="description" type="text">
     <button type="submit">Add to-do</button>
+  </form>
+  <form action="/" method="post">
+    <button type="submit">Clear your list!</button>
   </form>
 </section>
