@@ -3,7 +3,7 @@ require('todo')
 
 describe(Todo) do
   before() do
-    Task.clear()
+    Todo.clear()
   end
 
   describe("#description") do
