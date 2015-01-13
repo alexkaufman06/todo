@@ -1,16 +1,16 @@
-<h1>To Do List:</h1>
-<p>Here are all of your tasks:</p>
-<ul>
-  <% @todo.each() do |todo| %>
-    <li><%= todo.description() %></li>
-  <% end %>
-</ul>
+<section>
+  <p>Here are all of your tasks:</p>
+  <ul>
+    <% @todo.each() do |todo| %>
+      <li><%= todo.description() %></li>
+    <% end %>
+  </ul>
+</section>
 
-<p>Add a new todo:</p>
-
-<form action="/todo" method="post">
-  <label for="description">Todo Description:</label>
-  <input id="description" name="description" type="text">
-
-  <button type="submit">Add todo:</button>
-</form>
+<section>
+  <form action="/todo" method="post">
+    <label for="description">Add a new to-do item:</label>
+    <input id="description" name="description" type="text">
+    <button type="submit">Add to-do</button>
+  </form>
+</section>
