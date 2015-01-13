@@ -9,8 +9,13 @@ get("/") do
 end
 
 post("/todo") do
-  description = params.fetch("description")
-  todo = Todo.new(description)
+  @description = params.fetch("description")
+  todo = Todo.new(@description)
   todo.save()
   erb(:success)
+end
+
+post("/") do
+  @todo = Todo.clear()
+  erb(:index)
 end
