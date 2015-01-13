@@ -154,6 +154,7 @@ main {
 section {
   border-bottom: 1px solid #d0dad8;
   margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 section:last-of-type {
@@ -220,7 +221,8 @@ button {
     background-size: 200% 100%;
     background-position: 100%;
   }
-  [type="reset"] {
+  [type="reset"],
+  [action="/"] button {
     float: right;
 
     background: #e5cccd;
@@ -234,6 +236,9 @@ button {
   button:focus {
     color: #fff;
     background-position: 0%;
+  }
+  [action="/"] button {
+    float: none;
   }
 
 [href="/"] {
